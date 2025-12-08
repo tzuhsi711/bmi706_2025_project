@@ -121,7 +121,7 @@ def breast_cancer_df():
 
 
 @st.cache_data
-def intervention_df(df, selected_country="All", selected_status="All"):
+def df_intervention_long(df, selected_country="All", selected_status="All"):
     """
     Prepare intervention data in long format for visualization.
     """
@@ -204,7 +204,7 @@ def intervention_df(df, selected_country="All", selected_status="All"):
         ordered=True
     )
 
-    return intervention_df
+    return df_intervention_long
 
 
 @st.cache_data

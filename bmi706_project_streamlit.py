@@ -7,7 +7,7 @@ from vega_datasets import data
 # Page configuration
 st.set_page_config(
     layout="wide",
-    page_title="Breast Cancer Clinical Trials"
+    page_title="Breast Cancer Trial Atlas"
 )
 
 # Disable Altair max rows limit
@@ -560,20 +560,20 @@ st.altair_chart(combined_chart, use_container_width=True)
 # Sponsor type explanation
 with st.expander("Sponsor Category Definitions", expanded=False):
     st.markdown("""
-    **INDUSTRY (20%)**: Pharmaceutical and biotech companies
+    **FED**: US Federal government agencies excluding NIH
+    
+    **INDIV**: Individual physician investigators
+                
+    **INDUSTRY**: Pharmaceutical and biotech companies
+                
+    **NETWORK**: Research consortia and cooperative groups
 
-    **OTHER (72%)**: Universities, academic medical centers,
+    **NIH**: US National Institutes of Health agencies
+
+    **OTHER**: Universities, academic medical centers,
     non-profit hospitals, and cancer research organizations
-
-    **NIH (3.5%)**: US National Institutes of Health agencies
-
-    **NETWORK (2%)**: Research consortia and cooperative groups
-
-    **OTHER_GOV (2%)**: Non-US government hospitals and health agencies
-
-    **FED (0.1%)**: US Federal government agencies excluding NIH
-
-    **INDIV (<0.1%)**: Individual physician investigators
+    
+    **OTHER_GOV**: Non-US government hospitals and health agencies
     """)
 
 # Footer

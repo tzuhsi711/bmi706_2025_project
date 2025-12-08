@@ -227,7 +227,7 @@ def get_all_statuses(df):
 df = breast_cancer_df()
 
 # Title and description
-st.title("Breast Cancer Clinical Trials")
+st.title("Breast Cancer Trial Atlas")
 st.markdown(
     "Interactive analysis of breast cancer clinical trial trends, "
     "geographic distribution, and research characteristics"
@@ -388,7 +388,11 @@ point = (
         size=alt.Size(
             'num_trial:Q',
             title='Trial Count',
-            scale=alt.Scale(range=[10, 1000])
+            scale=alt.Scale(range=[10, 1000]),
+            legend=alt.legend(
+                orient='bottom-right',
+                direction='vertical'
+            )
         ),
         tooltip=[
             alt.Tooltip('country:N', title='Country'),

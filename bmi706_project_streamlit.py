@@ -268,7 +268,7 @@ selected_status = st.session_state.filter_status
 selected_country = st.session_state.filter_country
 
 # Prepare intervention data with current filters
-df_intervention = intervention_data(df, selected_country, selected_status)
+df_intervention = df_intervention_long(df, selected_country, selected_status)
 
 # Display result count feedback
 if selected_country != "All" or selected_status != "All":

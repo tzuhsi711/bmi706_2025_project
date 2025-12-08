@@ -389,7 +389,7 @@ point = (
             'num_trial:Q',
             title='Trial Count',
             scale=alt.Scale(range=[10, 1000]),
-            legend=alt.legend(
+            legend=alt.Legend(
                 orient='bottom-right',
                 direction='vertical'
             )

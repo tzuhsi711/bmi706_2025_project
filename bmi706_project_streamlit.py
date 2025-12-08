@@ -388,11 +388,7 @@ point = (
         size=alt.Size(
             'num_trial:Q',
             title='Trial Count',
-            scale=alt.Scale(range=[10, 1000]),
-            legend=alt.Legend(
-                orient='bottom-right',
-                direction='vertical'
-            )
+            scale=alt.Scale(range=[10, 1000])
         ),
         tooltip=[
             alt.Tooltip('country:N', title='Country'),

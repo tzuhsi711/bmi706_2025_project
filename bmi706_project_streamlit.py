@@ -448,6 +448,12 @@ intervention_lineChart = (
 )
 
 # Stacked bar chart - Intervention composition by study duration
+duration_order = [
+    "<1 year", "1-5 years", "6-10 years", "11-15 years",
+    "16-20 years", "21-25 years", "26-30 years", "31-35 years",
+    "36-40 years" 
+]
+
 stackedBar_Chart = (
     alt.Chart(df_intervention, title='Intervention Type Composition vs Study Duration')
     .transform_filter(
@@ -468,25 +474,15 @@ stackedBar_Chart = (
     .transform_calculate(
         prop='datum.num_trial / datum.total_trial'
     )
+    .transform_filter('datum.num_trial > 0')
     .mark_bar()
     .encode(
         x=alt.X(
             'duration_year_group:O',
             axis=alt.Axis(labelAngle=45),
             title='Study Duration (Years)',
-            scale=alt.Scale(
-                domain=[
-                    "<1 year",
-                    "1-5 years",
-                    "6-10 years",
-                    "11-15 years",
-                    "16-20 years",
-                    "21-25 years",
-                    "26-30 years",
-                    "31-35 years",
-                    "36-40 years"
-                ]
-            )
+            sort=duration_order
+            
         ),
         y=alt.Y(
             'num_trial:Q',
@@ -505,8 +501,8 @@ stackedBar_Chart = (
             alt.Tooltip('prop:Q', title='Proportion', format='.1%')
         ]
     )
-    .properties(width=600, height=300)
-)
+    .properties(width=600, height=300))
+
 
 
 # ============================================================================

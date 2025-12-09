@@ -181,11 +181,11 @@ def df_intervention_long(df, selected_country="All", selected_status="All"):
     )
 
     # Define bins and labels for duration groups
-    bins = [0, 1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56, np.inf]
+    bins = [0, 1, 6, 11, 16, 21, 26, 31, 36, np.inf]
     labels = [
         "<1 year", "1-5 years", "6-10 years", "11-15 years",
         "16-20 years", "21-25 years", "26-30 years", "31-35 years",
-        "36-40 years", "41-45 years", "46-50 years", "51-55 years", ">55 years"
+        "36-40 years"
     ]
 
     # Assign categories

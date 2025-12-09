@@ -481,11 +481,7 @@ stackedBar_Chart = (
                     "21-25 years",
                     "26-30 years",
                     "31-35 years",
-                    "36-40 years",
-                    "41-45 years",
-                    "46-50 years",
-                    "51-55 years",
-                    ">55 years"
+                    "36-40 years"
                 ]
             )
         ),

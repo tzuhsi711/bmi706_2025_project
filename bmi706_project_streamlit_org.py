@@ -33,9 +33,6 @@ def breast_cancer_df():
         .assign(country=lambda c: c['country'].str.strip())
     )
 
-    # Remove 'Unknown' from study_status_grouped
-    breast_data = breast_data[breast_data['study_status_grouped'] != 'Unknown']
-
     # Investigate which countries only have one case per study status
     studyStatus_count = (
         breast_data

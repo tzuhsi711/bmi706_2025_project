@@ -470,7 +470,24 @@ stackedBar_Chart = (
         x=alt.X(
             'duration_year_group:O',
             axis=alt.Axis(labelAngle=45),
-            title='Study Duration (Years)'
+            title='Study Duration (Years)',
+            scale=alt.Scale(
+                domain=[
+                    "<1 year",
+                    "1-5 years",
+                    "6-10 years",
+                    "11-15 years",
+                    "16-20 years",
+                    "21-25 years",
+                    "26-30 years",
+                    "31-35 years",
+                    "36-40 years",
+                    "41-45 years",
+                    "46-50 years",
+                    "51-55 years",
+                    ">55 years"
+                ]
+            )
         ),
         y=alt.Y(
             'num_trial:Q',
@@ -579,6 +596,6 @@ with st.expander("Sponsor Category Definitions", expanded=False):
 # Footer
 st.markdown("---")
 st.caption(
-    "Data source: Breast Cancer Clinical Trials Database | "
+    "Data source: ClinicalTrials.gov | "
     "Dashboard created with Streamlit and Altair"
 )

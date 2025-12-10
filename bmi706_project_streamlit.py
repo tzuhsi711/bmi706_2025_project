@@ -334,7 +334,7 @@ trial_lineChart = (
             'start_year:Q',
             title='Start Year',
             axis=alt.Axis(labelAngle=45, grid=False, format='d'),
-            sclae=alt.Scale(domain=[min_year, max_year], nice=False)
+            scale=alt.Scale(domain=[min_year, max_year], nice=False)
         ),
         y=alt.Y(
             'num_trial:Q',

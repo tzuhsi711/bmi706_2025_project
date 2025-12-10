@@ -313,15 +313,15 @@ year_brush = alt.selection_interval(
 # ========================================================
 # TASK 1: TEMPORAL TRENDS LINE CHART
 # ========================================================
-mask = pd.Series(True, index=df.index)
+mask1 = pd.Series(True, index=df.index)
 
 if selected_country != "All":
-    mask &= (df['country'] == selected_country)
+    mask1 &= (df['country'] == selected_country)
 
 if selected_status != "All":
-    mask &= (df['study_status_grouped'] == selected_status)
+    mask1 &= (df['study_status_grouped'] == selected_status)
 
-df_for_domain = df[mask]
+df_for_domain = df[mask1]
 
 min_year = int(df_for_domain['start_year'].min())
 max_year = int(df_for_domain['start_year'].max())
@@ -440,8 +440,8 @@ intervention_lineChart = (
         x=alt.X(
             'start_year:Q',
             title='Year',
-            axis=alt.Axis(labelAngle=45, grid=False, format='d'),
-            scale=alt.Scale(domain=[min_year, max_year], nice=False)
+            axis=alt.Axis(labelAngle=45, grid=False, format='d')
+            # scale=alt.Scale(domain=[min_year, max_year], nice=False)
         ),
         y=alt.Y(
             'num_trial:Q',

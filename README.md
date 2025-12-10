@@ -1,6 +1,6 @@
 ## BMI706 2025 Final Project: Breast Cancer Clinical Trial Visualization 
 
-*Group member: Alice Zhang, Junyang Deng, Cece Jen, Jason Liang*
+*Group 5 member: Alice Zhang, Junyang Deng, Cece Jen, Jason Liang*
 
 **Link to app: https://bmi706projectapppy-ikpyb3vhcaphqqk7wdawyh.streamlit.app/**
 

@@ -17,6 +17,10 @@ The purpose of our exploratory visualization tool is to understand how breast ca
 3) Distribution and evolution of intervention types in breast cancer trials
 4) Influence of sponsor type across study period, country, and study status
 
+### Main app
+
+All code used to generate the dashboard and render the interactive visualizations is available in `bmi706_project_streamlit.py`.
+
 ### Data
 
 All data used for this visualization is stored in the `data/` folder. 

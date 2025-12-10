@@ -313,6 +313,8 @@ year_brush = alt.selection_interval(
 # ========================================================
 # TASK 1: TEMPORAL TRENDS LINE CHART
 # ========================================================
+min_year = int(df['start_year'].min())
+max_year = int(df['start_year'].max())
 
 trial_lineChart = (
     alt.Chart(df, title='Temporal Trends in Breast Cancer Trials')
@@ -331,7 +333,8 @@ trial_lineChart = (
         x=alt.X(
             'start_year:Q',
             title='Start Year',
-            axis=alt.Axis(labelAngle=45, grid=False, format='d')
+            axis=alt.Axis(labelAngle=45, grid=False, format='d'),
+            sclae=alt.Scale(domain=[min_year, max_year], nice=False)
         ),
         y=alt.Y(
             'num_trial:Q',

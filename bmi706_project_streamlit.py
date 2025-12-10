@@ -313,8 +313,18 @@ year_brush = alt.selection_interval(
 # ========================================================
 # TASK 1: TEMPORAL TRENDS LINE CHART
 # ========================================================
-min_year = int(df['start_year'].min())
-max_year = int(df['start_year'].max())
+mask = pd.Series(True, index=df.index)
+
+if selected_country != "All":
+    mask &= (df['country'] == selected_country)
+
+if selected_status != "All":
+    mask &= (df['study_status_grouped'] == selected_status)
+
+df_for_domain = df[mask]
+
+min_year = int(df_for_domain['start_year'].min())
+max_year = int(df_for_domain['start_year'].max())
 
 trial_lineChart = (
     alt.Chart(df, title='Temporal Trends in Breast Cancer Trials')

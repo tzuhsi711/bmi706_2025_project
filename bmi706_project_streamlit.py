@@ -440,8 +440,8 @@ intervention_lineChart = (
         x=alt.X(
             'start_year:Q',
             title='Year',
-            axis=alt.Axis(labelAngle=45, grid=False, format='d')
-            # scale=alt.Scale(domain=[min_year, max_year], nice=False)
+            axis=alt.Axis(labelAngle=45, grid=False, format='d'), 
+            scale=alt.Scale(nice=False)
         ),
         y=alt.Y(
             'num_trial:Q',
